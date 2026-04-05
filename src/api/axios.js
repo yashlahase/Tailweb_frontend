@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  // Use the live Render backend URL, ensuring '/api' path is included
+  baseURL: import.meta.env.VITE_API_URL || 'https://tailweb-backend.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
